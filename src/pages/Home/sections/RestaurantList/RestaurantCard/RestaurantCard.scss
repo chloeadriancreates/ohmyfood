@@ -1,0 +1,91 @@
+@use '../../../../../utils/mixins';
+@use '../../../../../utils/variables';
+@use "sass:color";
+
+.restaurantCard {
+    @include mixins.resetLink;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include mixins.phoneAndUp {
+        width: 47%;
+        margin-bottom: 40px;
+    }
+
+    @include mixins.laptopAndUp {
+        width: 22%;
+    }
+
+    &_photo {
+        @include mixins.flex(row, flex-end, flex-start);
+        height: 175px;
+        width: 100%;
+        border-radius: 15px 15px 0px 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &_flag {
+        background: variables.$tertiary;
+        margin: 15px;
+        padding: 10px;
+        color: color.scale(variables.$tertiary, $lightness: -58%)
+    }
+
+    &_caption {
+        @include mixins.flex(row, space-between, center);
+        @include mixins.verticalDropShadow(0.10);
+        @include mixins.transition;
+        padding: 20px 15px;
+        background: white;
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    &_title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &_city {
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    &_like {
+        @include mixins.transition;
+        margin-right: 10px;
+        width: 22px;
+        height: 22px;
+        position: relative;
+        background: none;
+        border: none;
+
+        &_heart {
+            @include mixins.transition();
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            &--regular {
+                opacity: 1;
+            }
+        
+            &--hover {
+                opacity: 0;
+            }
+        }
+
+        &:hover &_heart--regular, &:focus &_heart--regular {
+            opacity: 0;
+        }
+
+        &:hover &_heart--hover, &:focus &_heart--hover {
+            opacity: 1;
+        }
+    }
+
+    &:hover &_caption, &:focus &_caption {
+        background: color.scale(variables.$primary--bright, $lightness: 87%);
+    }
+}

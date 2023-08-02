@@ -4,12 +4,17 @@ import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import Restaurant from "./pages/Restaurant/Restaurant";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
   },
+  {
+    path: "/restaurant/:restaurantKey",
+    element: <Restaurant />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

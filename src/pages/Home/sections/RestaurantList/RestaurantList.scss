@@ -1,0 +1,20 @@
+@use '../../../../utils/mixins';
+@use '../../../../utils/variables';
+
+.restaurantList {
+    background: variables.$grey--light;
+    padding: 60px 20px;
+
+    &_title {
+        margin-bottom: 25px;
+    }
+
+    &_cards {
+        @include mixins.flex(row, space-between, center);
+        flex-wrap: wrap;
+    }
+
+    @include mixins.phoneAndUp {
+        padding: 40px 40px 0px 40px;
+    }
+}

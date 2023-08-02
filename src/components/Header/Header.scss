@@ -12,6 +12,7 @@
     }
 
     &_arrow {
+        @include mixins.resetLink;
         position: absolute;
         left: 30px;
         top: 25px;
