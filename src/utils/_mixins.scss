@@ -12,3 +12,15 @@
 @mixin verticalDropShadow($opacity: 0.20) {
     box-shadow: 0px 10px 10px -5px rgba(0,0,0,$opacity);
 }
+
+@mixin phoneAndUp {
+    @media screen and (min-width: 550px){
+        @content;
+    }
+}
+
+@mixin tabletAndUp {
+    @media screen and (min-width: 700px){
+        @content;
+    }
+}

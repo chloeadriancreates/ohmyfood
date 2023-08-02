@@ -1,0 +1,26 @@
+@use '../../../../utils/mixins';
+@use '../../../../utils/variables';
+
+.hero {
+    @include mixins.flex(column, center, center);
+    padding: 40px 30px;
+    text-align: center;
+
+    &_title {
+        padding: 0px 20px 20px 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &_description {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+
+    &_steps {
+        @include mixins.flex(row, center, center);
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
