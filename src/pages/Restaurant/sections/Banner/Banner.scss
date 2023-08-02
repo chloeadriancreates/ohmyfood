@@ -1,0 +1,37 @@
+@use '../../../../utils/mixins';
+@use '../../../../utils/variables';
+
+.banner {
+    @include mixins.flex(column, flex-end, center);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 310px;
+    width: 100%;
+
+    @include mixins.mobileAndUp {
+        height: 500px;
+    }
+
+    &_title {
+        @include mixins.flex(row, space-between, center);
+        width: 100%;
+        border-radius: 40px 40px 0px 0px;
+        background: variables.$grey--light;
+        padding: 30px 20px;
+
+        @include mixins.mobileAndUp {
+            padding: 50px;
+        }
+
+        &_text {
+            font-family: variables.$display;
+            font-size: 1.75rem;
+            font-weight: normal;
+        }
+
+        &_heart {
+            margin-right: 20px;
+        }
+    }
+}

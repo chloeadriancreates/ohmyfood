@@ -19,7 +19,7 @@
         flex-wrap: wrap;
     }
 
-    @include mixins.phoneAndUp {
+    @include mixins.mobileAndUp {
         padding: 40px 40px 0px 40px;
     }
 }

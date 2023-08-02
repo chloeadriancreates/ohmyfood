@@ -1,5 +1,6 @@
 import "./Restaurant.scss";
 import Header from "../../components/Header/Header";
+import Banner from "./sections/Banner/Banner";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -14,9 +15,12 @@ export default function Restaurant() {
         console.log(restaurant);
     }, [loc, restaurant]);
 
-    return (
-        <div>
-            <Header back={true} />
-        </div>
-    )
+    if(restaurant) {
+        return (
+            <div>
+                <Header back={true} />
+                <Banner restaurantKey={restaurant.key} name={restaurant.name} />
+            </div>
+        );
+    }
 }

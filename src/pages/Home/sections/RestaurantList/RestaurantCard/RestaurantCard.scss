@@ -7,7 +7,7 @@
     width: 100%;
     margin-bottom: 20px;
 
-    @include mixins.phoneAndUp {
+    @include mixins.mobileAndUp {
         width: 47%;
         margin-bottom: 40px;
     }
@@ -52,37 +52,8 @@
         font-weight: 300;
     }
 
-    &_like {
-        @include mixins.transition;
-        margin-right: 10px;
-        width: 22px;
-        height: 22px;
-        position: relative;
-        background: none;
-        border: none;
-
-        &_heart {
-            @include mixins.transition();
-            position: absolute;
-            top: 0;
-            right: 0;
-
-            &--regular {
-                opacity: 1;
-            }
-        
-            &--hover {
-                opacity: 0;
-            }
-        }
-
-        &:hover &_heart--regular, &:focus &_heart--regular {
-            opacity: 0;
-        }
-
-        &:hover &_heart--hover, &:focus &_heart--hover {
-            opacity: 1;
-        }
+    &:hover {
+        cursor: pointer;
     }
 
     &:hover &_caption, &:focus &_caption {
