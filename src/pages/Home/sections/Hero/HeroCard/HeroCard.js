@@ -9,5 +9,5 @@ export default function HeroCard({number, icon, caption}) {
                 <p className="heroCard_caption_text">{caption}</p>
             </div>
         </div>
-    )
+    );
 }

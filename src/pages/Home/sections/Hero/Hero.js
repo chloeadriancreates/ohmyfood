@@ -15,7 +15,7 @@ export default function Hero() {
             icon: "fa-store",
             caption: "Dégustez au restaurant"
         }
-    ]
+    ];
 
     return (
         <section className="hero">
@@ -25,5 +25,5 @@ export default function Hero() {
                 { steps.map(step => <HeroCard key={steps.indexOf(step)} number={steps.indexOf(step) + 1} icon={step.icon} caption={step.caption} />)}
             </div>
         </section>
-    )
+    );
 }

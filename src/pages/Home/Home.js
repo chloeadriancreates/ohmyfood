@@ -38,5 +38,5 @@ export default function Home() {
                 <RestaurantList restaurants={formattedRestaurants} />
             }
         </div>
-    )
+    );
 }

@@ -29,5 +29,5 @@ export default function RestaurantCard({restaurant}) {
                 </button>
             </div>
         </Link>
-    )
+    );
 }

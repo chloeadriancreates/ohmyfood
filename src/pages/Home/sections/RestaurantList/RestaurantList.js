@@ -6,10 +6,10 @@ export default function RestaurantList({restaurants}) {
         <section className="restaurantList">
                 <h2 className="restaurantList_title">Restaurants</h2>
                 <div className="restaurantList_cards">
-                    { 
+                    {
                         restaurants.map(restaurant => <RestaurantCard key={restaurant.key} restaurant={restaurant} />)
                     }
                 </div>
             </section>
-    )
+    );
 }
