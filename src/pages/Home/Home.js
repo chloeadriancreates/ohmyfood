@@ -4,6 +4,7 @@ import Location from "./sections/Location/Location";
 import Hero from "./sections/Hero/Hero";
 import RestaurantList from "./sections/RestaurantList/RestaurantList";
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
     const [restaurants, setRestaurants] = useState(null);
@@ -37,6 +38,7 @@ export default function Home() {
             { formattedRestaurants &&
                 <RestaurantList restaurants={formattedRestaurants} />
             }
+            <Footer />
         </div>
     );
 }

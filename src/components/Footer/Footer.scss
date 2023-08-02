@@ -1,0 +1,47 @@
+@use '../../utils/mixins';
+@use '../../utils/variables';
+
+.footer {
+    @include mixins.flex(column, center, flex-start);
+    background: variables.$grey--dark;
+    color: white;
+    padding: 25px;
+
+    @include mixins.laptopAndUp {
+        @include mixins.flex(row, space-between, center);
+        padding: 40px;
+    }
+
+    &_title {
+        @include mixins.resetLink(white);
+        margin-bottom: 20px;
+        font-family: variables.$display;
+        font-weight: normal;
+
+        @include mixins.laptopAndUp {
+            margin: 0;
+            font-size: 25px;
+        }
+    }
+
+    &_group {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include mixins.laptopAndUp {
+            margin-bottom: 0;
+        }
+    }
+
+    &_link {
+        @include mixins.resetLink(white);
+    }
+
+    &_icon {
+        width: 15px;
+        margin-right: 10px;
+    }
+}

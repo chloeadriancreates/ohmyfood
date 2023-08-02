@@ -11,5 +11,5 @@ export default function Header({back}) {
                 </Link>
             }
         </header>
-    )
+    );
 }
