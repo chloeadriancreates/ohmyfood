@@ -1,0 +1,63 @@
+{
+    "name": "La note enchantée",
+    "location": "Charonne",
+    "new": true,
+    "menu": {
+        "appetizers": [
+            {
+                "name": "Ravioles de foie gras",
+                "description": "Accompagnées de leur crème à la truffe",
+                "price": 25
+            },
+            {
+                "name": "Caviar osciètre",
+                "description": "Sur blini à la farine de blé noir",
+                "price": 35
+            },
+            {
+                "name": "Homard et espuma de potiron",
+                "description": "Mariné aux zestes d'orange",
+                "price": 20
+            },
+            {
+                "name": "Foie gras de canard cuit entier",
+                "description": "Confiture de figue et pain toasté",
+                "price": 35
+            }
+        ],
+        "main": [
+            {
+                "name": "Noix de coquilles Saint-Jacques",
+                "description": "Sur lit de purée de céleri-rave",
+                "price": 40
+            },
+            {
+                "name": "Langouste poêlée",
+                "description": "Purée de patate douce",
+                "price": 35
+            },
+            {
+                "name": "Mijoté de queue de boeuf",
+                "description": "Et riz sauvage aux zestes de citron",
+                "price": 44
+            }
+        ],
+        "desserts": [
+            {
+                "name": "Macaron noisette et chocolat",
+                "description": "Glace au caramel brun et sel de Guérande",
+                "price": 18
+            },
+            {
+                "name": "Baba au rhum revisité",
+                "description": "Avec son coulis de citron",
+                "price": 22
+            },
+            {
+                "name": "Tarte au citron meringuée",
+                "description": "Déstructurée",
+                "price": 23
+            }
+        ]
+    }
+}
