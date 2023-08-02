@@ -11,7 +11,7 @@ export default function RestaurantCard({restaurant}) {
             <div className="restaurantCard_caption">
                 <div>
                     <h3 className="restaurantCard_title">{restaurant.name}</h3>
-                    <h3 className="restaurantCard_city">{restaurant.location}</h3>
+                    <p className="restaurantCard_city">{restaurant.location}</p>
                 </div>
                 <button className="restaurantCard_like">
                     <svg className="restaurantCard_like_heart restaurantCard_like_heart--hover" width="22" height="22" viewBox="0 0 22 22">

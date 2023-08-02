@@ -31,7 +31,7 @@ export default function Home() {
     }, [restaurants]);
 
     return (
-        <div>
+        <div className="home">
             <Header back={false} />
             <Location />
             <Hero />

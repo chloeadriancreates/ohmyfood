@@ -2,15 +2,20 @@
 @use '../../../../utils/variables';
 
 .restaurantList {
+    @include mixins.flex(column, flex-start, flex-start);
     background: variables.$grey--light;
-    padding: 60px 20px;
+    padding: 40px 20px;
+    flex-grow: 1;
 
     &_title {
-        margin-bottom: 25px;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
     }
 
     &_cards {
         @include mixins.flex(row, space-between, center);
+        width: 100%;
         flex-wrap: wrap;
     }
 
