@@ -1,0 +1,14 @@
+@mixin transition($duration: 0.4s) {
+    transition: all $duration ease;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin verticalDropShadow($opacity: 0.20) {
+    box-shadow: 0px 10px 10px -5px rgba(0,0,0,$opacity);
+}

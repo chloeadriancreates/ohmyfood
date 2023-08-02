@@ -1,0 +1,15 @@
+@use '../../../../utils/mixins';
+@use '../../../../utils/variables';
+
+.location {
+    @include mixins.flex(row, center, center);
+    background: variables.$grey--medium;
+    color: variables.$grey--dark;
+    box-shadow: inset 0px 10px 10px -5px rgba(0,0,0,0.10);
+    padding: 15px 0px;
+
+    &_text {
+        margin-left: 10px;
+        font-weight: 500;
+    }
+}

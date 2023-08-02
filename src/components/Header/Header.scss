@@ -1,0 +1,20 @@
+@use '../../utils/mixins';
+@use '../../utils/variables';
+
+.header {
+    @include mixins.flex(row, center, center);
+    padding: 20px 0px;
+    position: relative;
+
+    &_logo {
+        font-family: variables.$display;
+        font-size: 2.5rem;
+    }
+
+    &_arrow {
+        position: absolute;
+        left: 30px;
+        top: 25px;
+        font-size: 2rem;
+    }
+}
