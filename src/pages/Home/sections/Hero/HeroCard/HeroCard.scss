@@ -13,10 +13,11 @@
     position: relative;
 
     @include mixins.tabletAndUp {
-        width: 30%;
+        width: 28%;
         max-width: 300px;
         margin-bottom: 0;
         justify-content: center;
+        flex-grow: 1;
     }
 
     &:last-of-type {
