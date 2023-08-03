@@ -2,6 +2,7 @@ import "./Restaurant.scss";
 import Header from "../../components/Header/Header";
 import Banner from "./sections/Banner/Banner";
 import Menu from "./sections/Menu/Menu";
+import Footer from "../../components/Footer/Footer";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -22,6 +23,7 @@ export default function Restaurant() {
                 <Header back={true} />
                 <Banner restaurantKey={restaurant.key} name={restaurant.name} />
                 <Menu menu={restaurant.menu} />
+                <Footer />
             </div>
         );
     }
