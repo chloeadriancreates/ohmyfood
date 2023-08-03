@@ -5,10 +5,12 @@ import Hero from "./sections/Hero/Hero";
 import RestaurantList from "./sections/RestaurantList/RestaurantList";
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
+import Loader from "../../components/Loader/Loader";
 
 export default function Home() {
     const [restaurants, setRestaurants] = useState(null);
     const [formattedRestaurants, setFormattedRestaurants] = useState(null);
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const getRestaurants = async() => {
@@ -20,6 +22,10 @@ export default function Home() {
             }
         };
         getRestaurants();
+        let timer = setTimeout(() => setLoaded(true), 7000);
+        return () => {
+            clearTimeout(timer);
+        };
     }, []);
 
     useEffect(() => {
@@ -32,6 +38,9 @@ export default function Home() {
 
     return (
         <div className="home">
+            {!loaded &&
+                <Loader />
+            }
             <Header back={false} />
             <Location />
             <Hero />

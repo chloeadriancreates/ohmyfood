@@ -1,0 +1,89 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.loader {
+    position: absolute;
+    z-index: 1;
+    background: variables.$tertiary;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    animation: loader 1s ease;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+
+    &_text {
+        @include mixins.flex(row, center, center);
+        width: 100%;
+        height: 100%;
+        animation: loader_text 0.5s ease;
+        animation-delay: 3.8s;
+        animation-fill-mode: forwards;
+    }
+    @for $i from 1 through 8 {
+        &_letter#{$i} {
+            font-family: variables.$display;
+            font-size: 50px;
+            animation: loader_letter 1s ease;
+            animation-delay: calc(#{$i}s / 10);
+            animation-fill-mode: forwards;
+            animation-iteration-count: 3;
+        }
+    }
+}
+
+.content {
+    height: 100vh;
+    overflow: hidden;
+    animation: content 1s ease;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+// Animations
+
+@keyframes loader {
+    from {
+        opacity: 1;
+        visibility: visible;
+    } 
+    
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes loader_text {
+    from {
+        opacity: 1;
+    } 
+    
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes loader_letter {
+    0% {
+        transform: translateY(0px);
+    }
+
+    30% {
+        transform: translateY(-20px);
+    }
+
+    60%, 100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes content {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 100%;
+    }
+}
