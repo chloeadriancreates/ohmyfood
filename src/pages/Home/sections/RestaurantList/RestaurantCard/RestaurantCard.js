@@ -3,7 +3,6 @@ import "./RestaurantCard.scss";
 import { Link } from "react-router-dom";
 
 export default function RestaurantCard({restaurant}) {
-    console.log(restaurant);
     return (
         <Link to={`/restaurant/${restaurant.key}`} state={{ restaurant: restaurant }} className="restaurantCard">
             <div className="restaurantCard_photo" style={{backgroundImage: `url(./img/${restaurant.key}.jpg)`}}>

@@ -14,7 +14,6 @@ export default function Restaurant() {
         if(loc.state && !restaurant) {
             setRestaurant(loc.state.restaurant);
         }
-        console.log(restaurant);
     }, [loc, restaurant]);
 
     if(restaurant) {
