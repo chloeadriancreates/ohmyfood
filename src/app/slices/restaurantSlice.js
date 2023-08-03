@@ -6,14 +6,11 @@ export const restaurantSlice = createSlice({
   name: "restaurants",
   initialState,
   reducers: {
-    setRestaurantList: (state, action) => {
-      state.list = action.payload;
-    },
-    setMenu: (state, action) => {
-      state[action.payload.key] = action.payload.menu;
+    setRestaurants: (state, action) => {
+      state.restaurants = action.payload;
     }
   }
 });
 
-export const { setRestaurantList, setMenu } = restaurantSlice.actions;
+export const { setRestaurants } = restaurantSlice.actions;
 export default restaurantSlice.reducer;

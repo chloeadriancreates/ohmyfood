@@ -7,30 +7,31 @@ import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setRestaurantList } from "../../app/slices/restaurantSlice";
+import { setRestaurants } from "../../app/slices/restaurantSlice";
 
 export default function Home() {
     const dispatch = useDispatch();
-    const {list} = useSelector((state) => state.restaurants);
+    const {restaurants} = useSelector((state) => state.restaurants);
     const [loaded, setLoaded] = useState(true);
 
     useEffect(() => {
-        if(!list) {
+        if(!restaurants) {
             setLoaded(false);
             const getRestaurants = async() => {
                 try {
                     const response = await fetch("./data/restaurants.json");
                     const responseJS = await response.json();
+                    responseJS.map(restaurant => restaurant.liked = false);
                     const newRestaurants = responseJS.filter(restaurant => restaurant.new).sort((a, b) => a.name.localeCompare(b.name));
                     const oldRestaurants = responseJS.filter(restaurant => !restaurant.new).sort((a, b) => a.name.localeCompare(b.name));
-                    dispatch(setRestaurantList([...newRestaurants, ...oldRestaurants]));
+                    dispatch(setRestaurants([...newRestaurants, ...oldRestaurants]));
                   } catch(error) {
                     console.log(error);
                 }
             };
             getRestaurants();
         }
-    }, [dispatch, list]);
+    }, [dispatch, restaurants]);
 
     useEffect(() => {
         let timer = setTimeout(() => setLoaded(true), 7000);
@@ -47,7 +48,7 @@ export default function Home() {
             <Header back={false} />
             <Location />
             <Hero />
-            { list &&
+            { restaurants &&
                 <RestaurantList />
             }
             <Footer />
