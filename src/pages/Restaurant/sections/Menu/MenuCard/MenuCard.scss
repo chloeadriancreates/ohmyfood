@@ -1,58 +1,112 @@
-@use '../../../../../utils/mixins';
-@use '../../../../../utils/variables';
+@use "../../../../../utils/mixins";
+@use "../../../../../utils/variables";
+@use "sass:color";
 
-.heroCard {
-    @include mixins.flex(row, flex-start, center);
-    @include mixins.verticalDropShadow(0.15);
-    background: variables.$grey--light;
+.menuCard {
+    @include mixins.flex(row, space-between, flex-end);
+    @include mixins.verticalDropShadow(0.08);
     width: 100%;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 20px;
-    margin: 0px 2% 1.6rem 0.8rem;
-    position: relative;
+    margin-top: 15px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
 
     @include mixins.tabletAndUp {
-        width: 30%;
-        max-width: 300px;
-        margin-bottom: 0;
-        justify-content: center;
+        @include mixins.flex(column, flex-start, center);
     }
 
-    &:last-of-type {
-        margin-right: 0;
-        margin-bottom: 0p;
-    }
-
-    &_number {
-        position: absolute;
-        background: variables.$primary--bright;
-        border-radius: 50%;
-        width: 1.6rem;
-        height: 1.6rem;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        left: -0.8rem;
+    @include mixins.laptopAndUp {
+        @include mixins.flex(row, space-between, flex-end);
     }
 
     &_caption {
-        @include mixins.flex(row, flex-start, center);
-        margin: 25px 35px;
+        @include mixins.flex(row, space-between, flex-end);
+        width: 100%;
+        padding: 15px 25px 15px 15px;
+        flex-grow: 1;
+
+        &_title {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        &_description {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+    }
+    
+    &_button {
+        @include mixins.flex(column, space-between, flex-end);
+        @include mixins.transition;
+        align-self: stretch;
+        padding: 15px;
+        border: none;
+        border-radius: 0px 15px 15px 0px;
+        background-color: variables.$tertiary;
 
         @include mixins.tabletAndUp {
-            margin: 20px 20px 20px 30px;
+            flex-direction: row;
+            border-radius: 0px 0px 15px 15px;
+        }
+    
+        @include mixins.laptopAndUp {
+            flex-direction: column;
+            border-radius: 0px 15px 15px 0px;
+            background-size: 200% 200%;
+            background-image: linear-gradient(to left, variables.$tertiary 50%, white 0);
+            background-position: left;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            @include mixins.laptopAndUp {
+                background-position: right;
+            }
+        }
+
+        &_price {
+            font-size: 1rem;
+            font-weight: 700;
+            padding-bottom: 0.4rem;
+
+            @include mixins.tabletAndUp {
+                padding-bottom: 0;
+            }
+        
+            @include mixins.laptopAndUp {
+                padding-bottom: 0.4rem;
+            }
         }
 
         &_icon {
-            margin-right: 20px;
-            color: variables.$grey--dark;
+            @include mixins.transition;
+            font-size: 1.4rem;
+            transform: scale(-1, 1) translateX(0);
+
+            @include mixins.laptopAndUp {
+                transform: scale(-1, 1) translateX(-3rem);
+            }
         }
 
-        &_text {
-            font-weight: 500;
-            text-align: left;
+        &:focus &_icon {
+            transform: scale(-1, 1) translateX(0);
+        }
+    }
+
+    &:hover &_button {
+        @include mixins.laptopAndUp {
+            background-position: right;
+        }
+
+        &_icon {
+            @include mixins.laptopAndUp {
+                transform: scale(-1, 1) translateX(0);
+            }
         }
     }
 }

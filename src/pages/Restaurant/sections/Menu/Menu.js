@@ -1,29 +1,45 @@
+import { useEffect, useState } from "react";
 import "./Menu.scss";
 import MenuCard from "./MenuCard/MenuCard";
 
-export default function Menu() {
-    const steps = [
-        {
-            icon: "fa-mobile-alt",
-            caption: "Choisissez un restaurant"
-        },
-        {
-            icon: "fa-list-ul",
-            caption: "Composez votre menu"
-        },
-        {
-            icon: "fa-store",
-            caption: "Dégustez au restaurant"
-        }
-    ];
+export default function Menu({menu}) {
+    const [itemCounter, setItemCounter] = useState(null);
+    const typeTranslation = {
+        appetizers: "Entrées",
+        mains: "Plats",
+        desserts: "Desserts"
+    };
+
+    useEffect(() => {
+        const countItems = (menu) => {
+            let currentCounter = 1;
+            let itemCount = {};
+            Object.keys(menu).forEach(category => {
+                itemCount[category] = {
+                    title: currentCounter,
+                    dishes: []
+                };
+                currentCounter++;
+                menu[category].forEach(dish => {
+                    itemCount[category].dishes.push(currentCounter);
+                    currentCounter++;
+                });
+            });
+            return itemCount;
+        };
+        setItemCounter(countItems(menu));
+    }, [menu]);
 
     return (
-        <section className="hero">
-            <h2 className="hero_title">Réservez le menu qui vous convient</h2>
-            <p className="hero_description">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <div className="hero_steps">
-                { steps.map(step => <MenuCard key={steps.indexOf(step)} number={steps.indexOf(step) + 1} icon={step.icon} caption={step.caption} />)}
-            </div>
+        <section className="menu">
+            {itemCounter && Object.keys(menu).map(category =>
+                <section className="menu_category" key={itemCounter[category].title}>
+                    <h2 className={`menu_category_heading menuItem--${itemCounter[category].title}`}>{typeTranslation[category]}</h2>
+                    {menu[category].map(dish => {
+                        return <MenuCard dish={dish} key={itemCounter[category].dishes[menu[category].indexOf(dish)]} itemNumber={itemCounter[category].dishes[menu[category].indexOf(dish)]} />;
+                    })}
+                </section>
+            )}
         </section>
     );
 }

@@ -1,13 +1,18 @@
 import "./MenuCard.scss";
 
-export default function MenuCard({number, icon, caption}) {
+export default function MenuCard({dish, itemNumber}) {
     return (
-        <div className="heroCard">
-            <p className="heroCard_number">{number}</p>
-            <div className="heroCard_caption">
-                <i className={`heroCard_caption_icon fas ${icon}`}></i>
-                <p className="heroCard_caption_text">{caption}</p>
+        <div className={`menuCard menuItem--${itemNumber}`}>
+            <div className="menuCard_caption">
+                <div>
+                    <h3 className="menuCard_caption_title">{dish.name}</h3>
+                    <p className="menuCard_caption_description">{dish.description}</p>
+                </div>
             </div>
+            <button className="menuCard_button">
+                <p className="menuCard_button_price">{dish.price}€</p>
+                <i className="menuCard_button_icon fa-solid fa-cart-shopping"></i>
+            </button>
         </div>
     );
 }

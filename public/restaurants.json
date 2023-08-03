@@ -22,7 +22,7 @@
                     "price": 20
                 }
             ],
-            "main": [
+            "mains": [
                 {
                     "name": "Coquilles Saint-Jacques",
                     "description": "Accompagnées d'une purée de panais",
@@ -81,7 +81,7 @@
                     "price": 20
                 }
             ],
-            "main": [
+            "mains": [
                 {
                     "name": "Poulet rôti aux herbes de Provence",
                     "description": "Et sa crème de truffe",
@@ -145,7 +145,7 @@
                     "price": 35
                 }
             ],
-            "main": [
+            "mains": [
                 {
                     "name": "Noix de coquilles Saint-Jacques",
                     "description": "Sur lit de purée de céleri-rave",
@@ -204,7 +204,7 @@
                     "price": 20
                 }
             ],
-            "main": [
+            "mains": [
                 {
                     "name": "Filet de boeuf aux herbes",
                     "description": "Accompagné de sa ribambelle de légumes",

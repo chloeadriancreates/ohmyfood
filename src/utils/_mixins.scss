@@ -18,6 +18,12 @@
     text-decoration: none;
 }
 
+@mixin tinyScreens {
+    @media screen and (max-width: 350px){
+        @content;
+    }
+}
+
 @mixin mobileAndUp {
     @media screen and (min-width: 550px){
         @content;
@@ -32,6 +38,12 @@
 
 @mixin laptopAndUp {
     @media screen and (min-width: 1200px){
+        @content;
+    }
+}
+
+@mixin monitorAndUp {
+    @media screen and (min-width: 1500px){
         @content;
     }
 }

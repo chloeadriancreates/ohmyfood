@@ -1,5 +1,5 @@
-@use '../../../../utils/mixins';
-@use '../../../../utils/variables';
+@use "../../../../utils/mixins";
+@use "../../../../utils/variables";
 
 .restaurantList {
     @include mixins.flex(column, flex-start, flex-start);

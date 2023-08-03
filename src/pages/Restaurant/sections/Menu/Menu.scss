@@ -1,26 +1,60 @@
-@use '../../../../utils/mixins';
-@use '../../../../utils/variables';
+@use "../../../../utils/mixins";
+@use "../../../../utils/variables";
 
-.hero {
-    @include mixins.flex(column, center, center);
-    padding: 40px 30px;
-    text-align: center;
+.menu {
+    background: variables.$grey--light;
+    padding: 15px;
 
-    &_title {
-        padding: 0px 20px 20px 20px;
-        font-weight: 700;
-        text-align: center;
+    @include mixins.tabletAndUp {
+        @include mixins.flex(row, space-between, stretch);
+        padding: 15px 50px;
     }
 
-    &_description {
-        font-size: 1.2rem;
-        font-weight: 300;
-        margin-bottom: 30px;
+    &_category {
+        margin-bottom: 45px;
+
+        @include mixins.tabletAndUp {
+            @include mixins.flex(column, flex-start, flex-start);
+            padding: 1rem;
+            width: 30%;
+        }
+        
+        &_heading {
+            @include mixins.flex(column, flex-start, flex-start);
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+            
+            &::after {
+                content: "";
+                width: 40px;
+                height: 3px;
+                background: variables.$tertiary; 
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 20 {
+    .menuItem--#{$i} {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: menuItem 0.8s ease;
+        animation-fill-mode: forwards;
+        animation-delay: calc(#{$i}s / 5);
+    }
+}
+
+@keyframes menuItem {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    &_steps {
-        @include mixins.flex(row, center, center);
-        flex-wrap: wrap;
-        width: 100%;
+    to {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

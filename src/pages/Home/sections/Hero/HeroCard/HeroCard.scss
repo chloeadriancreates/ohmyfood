@@ -1,5 +1,5 @@
-@use '../../../../../utils/mixins';
-@use '../../../../../utils/variables';
+@use "../../../../../utils/mixins";
+@use "../../../../../utils/variables";
 
 .heroCard {
     @include mixins.flex(row, flex-start, center);
