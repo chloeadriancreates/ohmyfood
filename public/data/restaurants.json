@@ -1,0 +1,26 @@
+[
+    {
+        "key": "aLaFrancaise",
+        "name": "À la française",
+        "location": "Cité Rouge",
+        "new": false
+    },
+    {
+        "key": "deliceDesSens",
+        "name": "Le délice des sens",
+        "location": "Folie-Méricourt",
+        "new": false
+    },
+    {
+        "key": "noteEnchantee",
+        "name": "La note enchantée",
+        "location": "Charonne",
+        "new": true
+    },
+    {
+        "key": "paletteDuGout",
+        "name": "La palette du goût",
+        "location": "Ménilmontant",
+        "new": true
+    }
+]

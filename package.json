@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "sass": "^1.64.2",
@@ -23,15 +25,41 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": ["react-app"],
+    "extends": [
+      "react-app"
+    ],
     "rules": {
-      "semi": ["warn", "always"],
-      "comma-dangle": ["warn", "never"],
-      "comma-spacing": ["warn", {"before": false, "after": true}],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "comma-dangle": [
+        "warn",
+        "never"
+      ],
+      "comma-spacing": [
+        "warn",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
       "no-multi-spaces": "warn",
       "no-trailing-spaces": "warn",
-      "no-multiple-empty-lines": ["warn", {"max": 2}],
-      "quotes": ["warn", "double", {"avoidEscape": true, "allowTemplateLiterals": true}]
+      "no-multiple-empty-lines": [
+        "warn",
+        {
+          "max": 2
+        }
+      ],
+      "quotes": [
+        "warn",
+        "double",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ]
     }
   },
   "browserslist": {
