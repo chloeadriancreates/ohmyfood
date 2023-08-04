@@ -10,7 +10,7 @@ export const cartSlice = createSlice({
   reducers: {
     addRestaurants: (state, action) => {
       for(const restaurant in action.payload) {
-        state.cart.push({id: action.payload[restaurant].id, order: []});
+        state.cart.push({id: action.payload[restaurant].id, order: [], total: 0});
       }
     },
     addItem: (state, action) => {
@@ -22,6 +22,7 @@ export const cartSlice = createSlice({
         } else {
           restaurant.order.push({ dish: action.payload.dish, quantity: 1 });
         }
+        restaurant.total += action.payload.dish.price;
     }
   }
 });

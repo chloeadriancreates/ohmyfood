@@ -4,12 +4,8 @@
 
 .orderCard {
     @include mixins.flex(row, space-between, center);
-    padding-top: 1rem;
-
-    &:not(:last-child) {
-        padding-bottom: 1rem;
-        border-bottom: solid 1px variables.$secondary;
-    }
+    padding: 1rem 0;
+    border-bottom: solid 1px variables.$secondary;
 
     &_caption {
         &_title {
