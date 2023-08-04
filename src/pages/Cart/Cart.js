@@ -13,8 +13,10 @@ export default function Cart() {
             <Header back={true} />
             <section className="cart_section">
                 <h2 className="cart_section_title">Votre panier</h2>
-                { (cart && restaurants) &&
+                { (cart && restaurants && cart.find(restaurant => restaurant.order.length)) ?
                     cart.filter(restaurant => restaurant.order.length).map(restaurant => <Order restaurantOrder={restaurant} key={restaurant.id} />)
+                :
+                    <p className="cart_section_description">Votre panier est vide ! Découvrez notre sélection de restaurants pour vous régaler.</p>
                 }
             </section>
             <Footer />

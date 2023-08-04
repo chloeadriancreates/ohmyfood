@@ -3,11 +3,21 @@
 @use "sass:color";
 
 .orderCard {
-    @include mixins.flex(row, space-between, center);
+    @include mixins.flex(column, center, flex-start);
     padding: 1rem 0;
     border-bottom: solid 1px variables.$secondary;
 
+    @include mixins.mobileAndUp {
+        @include mixins.flex(row, space-between, center);
+    }
+
     &_caption {
+        margin-bottom: 1rem;
+
+        @include mixins.mobileAndUp {
+            margin-bottom: 0;
+        }
+
         &_title {
             margin-bottom: 5px;
             font-size: 1.2rem;

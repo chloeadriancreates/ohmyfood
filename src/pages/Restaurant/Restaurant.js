@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import Banner from "./sections/Banner/Banner";
 import Menu from "./sections/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
+import Error from "../../pages/Error/Error";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
@@ -31,5 +32,7 @@ export default function Restaurant() {
                 <Footer />
             </div>
         );
+    } else {
+        return <Error />;
     }
 }

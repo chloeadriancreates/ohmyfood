@@ -1,12 +1,13 @@
 @use "../../utils/mixins";
 @use "../../utils/variables";
 
-.cart{
+.error{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 
     &_section {
+        @include mixins.flex(column, center, center);
         background: variables.$grey--light;
         padding: 30px;
         flex-grow: 1;
@@ -14,9 +15,8 @@
         &_title {
             font-family: variables.$display;
             font-weight: normal;
-            font-size: 2.5rem;
+            font-size: 18rem;
             text-align: center;
-            margin-bottom: 2rem;
         }
 
         &_description {
