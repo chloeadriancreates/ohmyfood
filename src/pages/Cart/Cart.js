@@ -9,10 +9,10 @@ export default function Cart() {
     const {restaurants} = useSelector((state) => state.restaurants);
 
     return (
-        <div>
+        <div className="cart">
             <Header back={true} />
-            <section className="cart">
-                <h2 className="cart_title">Votre panier</h2>
+            <section className="cart_section">
+                <h2 className="cart_section_title">Votre panier</h2>
                 { (cart && restaurants) &&
                     cart.filter(restaurant => restaurant.order.length).map(restaurant => <Order restaurantOrder={restaurant} key={restaurant.id} />)
                 }

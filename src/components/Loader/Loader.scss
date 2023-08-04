@@ -23,7 +23,7 @@
     @for $i from 1 through 8 {
         &_letter#{$i} {
             font-family: variables.$display;
-            font-size: 50px;
+            font-size: 3rem;
             animation: loader_letter 1s ease;
             animation-delay: calc(#{$i}s / 10);
             animation-fill-mode: forwards;
