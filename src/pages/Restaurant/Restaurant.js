@@ -22,6 +22,12 @@ export default function Restaurant() {
         }
     }, [dispatch, restaurants, id]);
 
+    useEffect(() => {
+        if(restaurant) {
+            document.title = `${restaurant.name} – Ohmyfood!`;
+        }
+    }, [restaurant]);
+
     if(restaurant) {
         return (
             <div>

@@ -1,8 +1,13 @@
 import "./Error.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { useEffect } from "react";
 
 export default function Error() {
+    useEffect(() => {
+        document.title = "Erreur – Ohmyfood!";
+    }, []);
+
     return (
         <div className="error">
             <Header back={true} />

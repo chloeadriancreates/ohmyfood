@@ -16,6 +16,10 @@ export default function Home() {
     const [loaded, setLoaded] = useState(true);
 
     useEffect(() => {
+        document.title = "Ohmyfood! - Réservez le menu qui vous convient";
+    }, []);
+
+    useEffect(() => {
         if(!restaurants) {
             setLoaded(false);
             getRestaurants(dispatch);

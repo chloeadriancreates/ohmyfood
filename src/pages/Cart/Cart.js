@@ -3,10 +3,15 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Order from "./sections/Order/Order";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export default function Cart() {
     const {cart} = useSelector((state) => state.cart);
     const {restaurants} = useSelector((state) => state.restaurants);
+
+    useEffect(() => {
+        document.title = "Panier – Ohmyfood!";
+    }, []);
 
     return (
         <div className="cart">
