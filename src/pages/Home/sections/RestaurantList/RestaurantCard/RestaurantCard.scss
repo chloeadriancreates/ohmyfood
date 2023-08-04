@@ -7,8 +7,26 @@
     width: 100%;
     margin-bottom: 20px;
 
+    &:not(:nth-child(2n)) {
+        @include mixins.mobileAndUp {
+            margin-right: 6%;
+        }
+    }
+
+    &:not(:last-child) {
+        @include mixins.laptopAndUp {
+            margin-right: 3%;
+        }
+    }
+
+    &:last-child {
+        @include mixins.laptopAndUp {
+            margin-right: 0;
+        }
+    }
+
     @include mixins.mobileAndUp {
-        width: 47%;
+        width: 47%; 
         margin-bottom: 40px;
     }
 
@@ -17,12 +35,14 @@
     }
 
     &_photo {
+        @include mixins.transition;
         @include mixins.flex(row, flex-end, flex-start);
         height: 175px;
         width: 100%;
         border-radius: 15px 15px 0px 0px;
-        background-size: cover;
+        background-size: 110%;
         background-repeat: no-repeat;
+        background-position: center;
     }
 
     &_flag {
@@ -33,30 +53,34 @@
     }
 
     &_caption {
-        @include mixins.flex(row, space-between, center);
         @include mixins.verticalDropShadow(0.10);
         @include mixins.transition;
         padding: 20px 15px;
         background: white;
         border-radius: 0px 0px 15px 15px;
+            
+
+        &_title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    
+        &_city {
+            font-size: 17px;
+            font-weight: 300;
+        }
     }
 
-    &_title {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 5px;
-    }
-
-    &_city {
-        font-size: 17px;
-        font-weight: 300;
-    }
-
-    &:hover {
+    &:hover, &:focus {
         cursor: pointer;
     }
 
     &:hover &_caption, &:focus &_caption {
-        background: color.scale(variables.$primary--bright, $lightness: 87%);
+        background-color: color.scale(variables.$primary--bright, $lightness: 85%)
+    }
+
+    &:hover &_photo, &:focus &_photo {
+        background-size: 130%;
     }
 }

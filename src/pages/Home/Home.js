@@ -7,29 +7,21 @@ import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setRestaurants } from "../../app/slices/restaurantSlice";
+import { getRestaurants } from "../../utils/getRestaurants";
 
 export default function Home() {
     const dispatch = useDispatch();
     const {restaurants} = useSelector((state) => state.restaurants);
+    const [favoriteRestaurants, setFavoriteRestaurants] = useState(null);
     const [loaded, setLoaded] = useState(true);
 
     useEffect(() => {
         if(!restaurants) {
             setLoaded(false);
-            const getRestaurants = async() => {
-                try {
-                    const response = await fetch("./data/restaurants.json");
-                    const responseJS = await response.json();
-                    responseJS.map(restaurant => restaurant.liked = false);
-                    const newRestaurants = responseJS.filter(restaurant => restaurant.new).sort((a, b) => a.name.localeCompare(b.name));
-                    const oldRestaurants = responseJS.filter(restaurant => !restaurant.new).sort((a, b) => a.name.localeCompare(b.name));
-                    dispatch(setRestaurants([...newRestaurants, ...oldRestaurants]));
-                  } catch(error) {
-                    console.log(error);
-                }
-            };
-            getRestaurants();
+            getRestaurants(dispatch);
+        } else {
+            console.log(restaurants.filter(restaurant => restaurant.liked === true));
+            setFavoriteRestaurants(restaurants.filter(restaurant => restaurant.liked === true));
         }
     }, [dispatch, restaurants]);
 
@@ -40,18 +32,22 @@ export default function Home() {
         };
     }, [loaded]);
 
-    return (
-        <div className="home">
-            {!loaded &&
-                <Loader />
-            }
-            <Header back={false} />
-            <Location />
-            <Hero />
-            { restaurants &&
-                <RestaurantList />
-            }
-            <Footer />
-        </div>
-    );
+   if(!loaded) {
+        return <Loader />;
+   } else {
+        return (
+            <div className="home">
+                <Header back={false} />
+                <Location />
+                <Hero />
+                { restaurants &&
+                    <RestaurantList title="Tous nos restaurants" restaurants={restaurants} />
+                }
+                { (favoriteRestaurants && favoriteRestaurants.length > 0) &&
+                    <RestaurantList title="Vos restaurants préférés" restaurants={favoriteRestaurants} />
+                }
+                <Footer />
+            </div>
+        );
+   }
 }

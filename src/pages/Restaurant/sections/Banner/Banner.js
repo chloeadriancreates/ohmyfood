@@ -1,12 +1,12 @@
 import "./Banner.scss";
 import Like from "../../../../components/Like/Like";
 
-export default function Banner({restaurantKey, name}) {
+export default function Banner({restaurant}) {
     return (
-        <section className="banner" style={{backgroundImage: `url(/img/${restaurantKey}.jpg)`}}>
+        <section className="banner" style={{backgroundImage: `url(/img/${restaurant.key}.jpg)`}}>
             <div className="banner_title">
-                <h1 className="banner_title_text">{name}</h1>
-                <Like />
+                <h1 className="banner_title_text">{restaurant.name}</h1>
+                <Like restaurant={restaurant}/>
             </div>
         </section>
     );

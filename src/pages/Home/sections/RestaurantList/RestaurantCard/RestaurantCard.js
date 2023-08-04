@@ -1,4 +1,3 @@
-import Like from "../../../../../components/Like/Like";
 import "./RestaurantCard.scss";
 import { Link } from "react-router-dom";
 
@@ -9,11 +8,8 @@ export default function RestaurantCard({restaurant}) {
                 {restaurant.new && <div className="restaurantCard_flag">Nouveau</div>}
             </div>
             <div className="restaurantCard_caption">
-                <div>
-                    <h3 className="restaurantCard_title">{restaurant.name}</h3>
-                    <p className="restaurantCard_city">{restaurant.location}</p>
-                </div>
-                <Like />
+                <h3 className="restaurantCard_caption_title">{restaurant.name}</h3>
+                <p className="restaurantCard_caption_city">{restaurant.location}</p>
             </div>
         </Link>
     );

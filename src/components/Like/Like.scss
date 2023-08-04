@@ -16,11 +16,7 @@
         top: 0;
         right: 0;
 
-        &--regular {
-            opacity: 1;
-        }
-    
-        &--hover {
+        &--mid {
             opacity: 0;
         }
     }
@@ -29,11 +25,7 @@
         cursor: pointer;
     }
 
-    &:hover &_heart--regular, &:focus &_heart--regular {
-        opacity: 0;
-    }
-
-    &:hover &_heart--hover, &:focus &_heart--hover {
+    &:hover &_heart--mid {
         opacity: 1;
     }
 }

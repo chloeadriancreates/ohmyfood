@@ -4,30 +4,30 @@ import Banner from "./sections/Banner/Banner";
 import Menu from "./sections/Menu/Menu";
 import Footer from "../../components/Footer/Footer";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { getRestaurants } from "../../utils/getRestaurants";
 
 export default function Restaurant() {
+    const dispatch = useDispatch();
     const {restaurantKey} = useParams();
     const {restaurants} = useSelector((state) => state.restaurants);
     const [restaurant, setRestaurant] = useState(null);
 
     useEffect(() => {
-        if(restaurants) {
+        if(!restaurants) {
+            getRestaurants(dispatch);
+        } else {
             setRestaurant(restaurants.filter(restaurant => restaurant.key === restaurantKey)[0]);
         }
-    }, [restaurants, restaurantKey]);
-
-    useEffect(() => {
-        console.log(restaurant);
-    }, [restaurant]);
+    }, [dispatch, restaurants, restaurantKey]);
 
     if(restaurant) {
         return (
             <div>
                 <Header back={true} />
-                    <Banner restaurantKey={restaurantKey} name={restaurant.name} />
-                    <Menu menu={restaurant.menu} />
+                <Banner restaurant={restaurant} />
+                <Menu menu={restaurant.menu} />
                 <Footer />
             </div>
         );

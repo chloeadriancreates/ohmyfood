@@ -8,9 +8,12 @@ export const restaurantSlice = createSlice({
   reducers: {
     setRestaurants: (state, action) => {
       state.restaurants = action.payload;
+    },
+    toggleLike: (state, action) => {
+      state.restaurants[action.payload.id].liked = !state.restaurants[action.payload.id].liked;
     }
   }
 });
 
-export const { setRestaurants } = restaurantSlice.actions;
+export const { setRestaurants, toggleLike } = restaurantSlice.actions;
 export default restaurantSlice.reducer;

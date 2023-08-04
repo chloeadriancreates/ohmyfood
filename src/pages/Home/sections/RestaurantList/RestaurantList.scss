@@ -14,7 +14,7 @@
     }
 
     &_cards {
-        @include mixins.flex(row, space-between, center);
+        @include mixins.flex(row, flex-start, center);
         width: 100%;
         flex-wrap: wrap;
     }
