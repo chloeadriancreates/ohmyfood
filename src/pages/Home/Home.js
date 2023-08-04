@@ -31,22 +31,19 @@ export default function Home() {
         };
     }, [loaded]);
 
-   if(!loaded) {
-        return <Loader />;
-   } else {
-        return (
-            <div className="home">
-                <Header back={false} />
-                <Location />
-                <Hero />
-                { restaurants &&
-                    <RestaurantList title="Tous nos restaurants" restaurants={restaurants} />
-                }
-                { (favoriteRestaurants && favoriteRestaurants.length > 0) &&
-                    <RestaurantList title="Vos restaurants préférés" restaurants={favoriteRestaurants} />
-                }
-                <Footer />
-            </div>
-        );
-   }
+    return (
+        <div className="home">
+            {!loaded && <Loader />}
+            <Header back={false} />
+            <Location />
+            <Hero />
+            { restaurants &&
+                <RestaurantList title="Tous nos restaurants" restaurants={restaurants} />
+            }
+            { (favoriteRestaurants && favoriteRestaurants.length > 0) &&
+                <RestaurantList title="Vos restaurants préférés" restaurants={favoriteRestaurants} />
+            }
+            <Footer />
+        </div>
+    );
 }

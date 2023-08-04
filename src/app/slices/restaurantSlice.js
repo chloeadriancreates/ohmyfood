@@ -10,7 +10,8 @@ export const restaurantSlice = createSlice({
       state.restaurants = action.payload;
     },
     toggleLike: (state, action) => {
-      state.restaurants[action.payload.id].liked = !state.restaurants[action.payload.id].liked;
+      const restaurant = state.restaurants.find(restaurant => restaurant.id === action.payload.id);
+      restaurant.liked = !restaurant.liked;
     }
   }
 });
