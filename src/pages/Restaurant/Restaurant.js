@@ -1,4 +1,3 @@
-import "./Restaurant.scss";
 import Header from "../../components/Header/Header";
 import Banner from "./sections/Banner/Banner";
 import Menu from "./sections/Menu/Menu";

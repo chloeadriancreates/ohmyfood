@@ -1,5 +1,4 @@
 @use "../../utils/mixins";
-@use "../../utils/variables";
 
 .like {
     @include mixins.transition;

@@ -11,7 +11,6 @@ export const getRestaurants = async(dispatch) => {
         formattedRestaurants.forEach(restaurant => {
             restaurant.liked = false;
         });
-        console.log(formattedRestaurants);
         dispatch(setRestaurants(formattedRestaurants));
         dispatch(addRestaurants(formattedRestaurants));
       } catch(error) {

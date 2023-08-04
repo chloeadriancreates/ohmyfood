@@ -1,5 +1,4 @@
 @use "../../../../utils/mixins";
-@use "../../../../utils/variables";
 
 .hero {
     @include mixins.flex(column, center, center);
