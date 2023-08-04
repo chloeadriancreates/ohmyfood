@@ -10,7 +10,7 @@ import { getRestaurants } from "../../utils/getRestaurants";
 
 export default function Restaurant() {
     const dispatch = useDispatch();
-    const {restaurantKey} = useParams();
+    const {id} = useParams();
     const {restaurants} = useSelector((state) => state.restaurants);
     const [restaurant, setRestaurant] = useState(null);
 
@@ -18,16 +18,16 @@ export default function Restaurant() {
         if(!restaurants) {
             getRestaurants(dispatch);
         } else {
-            setRestaurant(restaurants.filter(restaurant => restaurant.key === restaurantKey)[0]);
+            setRestaurant(restaurants.filter(restaurant => restaurant.id === parseInt(id))[0]);
         }
-    }, [dispatch, restaurants, restaurantKey]);
+    }, [dispatch, restaurants, id]);
 
     if(restaurant) {
         return (
             <div>
                 <Header back={true} />
                 <Banner restaurant={restaurant} />
-                <Menu menu={restaurant.menu} />
+                <Menu restaurant={restaurant} />
                 <Footer />
             </div>
         );

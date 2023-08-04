@@ -20,7 +20,6 @@ export default function Home() {
             setLoaded(false);
             getRestaurants(dispatch);
         } else {
-            console.log(restaurants.filter(restaurant => restaurant.liked === true));
             setFavoriteRestaurants(restaurants.filter(restaurant => restaurant.liked === true));
         }
     }, [dispatch, restaurants]);

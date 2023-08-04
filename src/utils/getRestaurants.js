@@ -1,4 +1,5 @@
 import { setRestaurants } from "../app/slices/restaurantSlice";
+import { addRestaurants } from "../app/slices/cartSlice";
 
 export const getRestaurants = async(dispatch) => {
     try {
@@ -9,9 +10,10 @@ export const getRestaurants = async(dispatch) => {
         const formattedRestaurants = [...newRestaurants, ...oldRestaurants];
         formattedRestaurants.forEach(restaurant => {
             restaurant.liked = false;
-            restaurant.id = formattedRestaurants.indexOf(restaurant);
         });
+        console.log(formattedRestaurants);
         dispatch(setRestaurants(formattedRestaurants));
+        dispatch(addRestaurants(formattedRestaurants));
       } catch(error) {
         console.log(error);
     }

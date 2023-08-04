@@ -7,15 +7,24 @@
     width: 100%;
     margin-bottom: 20px;
 
+    @include mixins.mobileAndUp {
+        width: 47%; 
+        margin-bottom: 40px;
+    }
+
     &:not(:nth-child(2n)) {
         @include mixins.mobileAndUp {
             margin-right: 6%;
         }
     }
 
+    @include mixins.laptopAndUp {
+        width: 22%;
+    }
+
     &:not(:last-child) {
         @include mixins.laptopAndUp {
-            margin-right: 3%;
+            margin-right: 4%;
         }
     }
 
@@ -23,15 +32,6 @@
         @include mixins.laptopAndUp {
             margin-right: 0;
         }
-    }
-
-    @include mixins.mobileAndUp {
-        width: 47%; 
-        margin-bottom: 40px;
-    }
-
-    @include mixins.laptopAndUp {
-        width: 22%;
     }
 
     &_photo {

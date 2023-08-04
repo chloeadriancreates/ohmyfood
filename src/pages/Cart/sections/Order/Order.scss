@@ -1,0 +1,14 @@
+@use "../../../../utils/mixins";
+@use "../../../../utils/variables";
+
+.order {
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    &_title {
+        font-family: variables.$display;
+        font-weight: normal;
+        font-size: 2rem;
+    }
+}

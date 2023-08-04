@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Menu.scss";
 import MenuCard from "./MenuCard/MenuCard";
 
-export default function Menu({menu}) {
+export default function Menu({restaurant}) {
     const [itemCounter, setItemCounter] = useState(null);
     const typeTranslation = {
         appetizers: "Entrées",
@@ -27,16 +27,23 @@ export default function Menu({menu}) {
             });
             return itemCount;
         };
-        setItemCounter(countItems(menu));
-    }, [menu]);
+        setItemCounter(countItems(restaurant.menu));
+    }, [restaurant.menu]);
 
     return (
         <section className="menu">
-            {itemCounter && Object.keys(menu).map(category =>
+            {itemCounter && Object.keys(restaurant.menu).map(category =>
                 <section className="menu_category" key={itemCounter[category].title}>
                     <h2 className={`menu_category_heading menuItem--${itemCounter[category].title}`}>{typeTranslation[category]}</h2>
-                    {menu[category].map(dish => {
-                        return <MenuCard dish={dish} key={itemCounter[category].dishes[menu[category].indexOf(dish)]} itemNumber={itemCounter[category].dishes[menu[category].indexOf(dish)]} />;
+                    {restaurant.menu[category].map(dish => {
+                        return(
+                            <MenuCard
+                            dish={dish}
+                            key={itemCounter[category].dishes[restaurant.menu[category].indexOf(dish)]}
+                            itemNumber={itemCounter[category].dishes[restaurant.menu[category].indexOf(dish)]}
+                            restaurantId={restaurant.id}
+                            />
+                        );
                     })}
                 </section>
             )}
