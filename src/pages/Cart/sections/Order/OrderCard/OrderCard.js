@@ -13,9 +13,9 @@ export default function OrderCard({dish, restaurantId}) {
             </div>
             <div className="orderCard_counter">
                 <div className="orderCard_counter_quantity">
-                    <button className="orderCard_counter_quantity_button" onClick={() => dispatch(decrementQuantity({restaurantId: restaurantId, dishId: dish.dish.id}))}>-</button>
+                    <button aria-label="Réduire" className="orderCard_counter_quantity_button" onClick={() => dispatch(decrementQuantity({restaurantId: restaurantId, dishId: dish.dish.id}))}>-</button>
                     <p className="orderCard_counter_quantity_text">{dish.quantity}</p>
-                    <button className="orderCard_counter_quantity_button" onClick={() => dispatch(incrementQuantity({restaurantId: restaurantId, dishId: dish.dish.id}))}>+</button>
+                    <button aria-label="Augmenter" className="orderCard_counter_quantity_button" onClick={() => dispatch(incrementQuantity({restaurantId: restaurantId, dishId: dish.dish.id}))}>+</button>
                 </div>
                 <p className="orderCard_counter_price">{dish.dish.price * dish.quantity}€</p>
             </div>

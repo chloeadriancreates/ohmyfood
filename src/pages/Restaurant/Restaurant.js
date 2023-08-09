@@ -28,16 +28,18 @@ export default function Restaurant() {
         }
     }, [restaurant]);
 
-    if(restaurant) {
-        return (
-            <div>
-                <Header back={true} />
-                <Banner restaurant={restaurant} />
-                <Menu restaurant={restaurant} />
-                <Footer />
-            </div>
-        );
-    } else {
-        return <Error />;
+    if(restaurant !== null) {
+        if(restaurant) {
+            return (
+                <div>
+                    <Header />
+                    <Banner restaurant={restaurant} />
+                    <Menu restaurant={restaurant} />
+                    <Footer />
+                </div>
+            );
+        } else {
+            return <Error />;
+        }
     }
 }

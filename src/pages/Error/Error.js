@@ -10,7 +10,7 @@ export default function Error() {
 
     return (
         <div className="error">
-            <Header back={true} />
+            <Header />
             <section className="error_section">
                 <h2 className="error_section_title">404</h2>
                 <p className="error_section_description">Cette page n'existe pas. Revenez à l'accueil pour découvrir nos restaurants !</p>

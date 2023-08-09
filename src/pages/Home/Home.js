@@ -38,7 +38,7 @@ export default function Home() {
     return (
         <div className="home">
             {!loaded && <Loader />}
-            <Header back={false} />
+            <Header />
             <Location />
             <Hero />
             { restaurants &&

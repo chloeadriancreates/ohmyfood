@@ -15,15 +15,29 @@
         &_title {
             font-family: variables.$display;
             font-weight: normal;
-            font-size: 18rem;
+            font-size: 7rem;
             text-align: center;
+            line-height: 1;
+
+            @include mixins.mobileAndUp {
+                font-size: 14rem;
+            }
+
+            @include mixins.tabletAndUp {
+                font-size: 18rem;
+            }
         }
 
         &_description {
             font-weight: 300;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-align: center;
-            margin: 0 3rem 2rem;
+            margin: 0 1rem 1rem;
+
+            @include mixins.mobileAndUp {
+                font-size: 1.5rem;
+                margin: 0 3rem 2rem;
+            }
         }
     } 
 }

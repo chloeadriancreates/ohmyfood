@@ -61,6 +61,7 @@
 
         &:hover {
             cursor: pointer;
+            background-color: color.scale(variables.$tertiary, $lightness: 40%);
         }
 
         &:focus {

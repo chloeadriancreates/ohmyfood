@@ -15,7 +15,7 @@ export default function Cart() {
 
     return (
         <div className="cart">
-            <Header back={true} />
+            <Header />
             <section className="cart_section">
                 <h2 className="cart_section_title">Votre panier</h2>
                 { (cart && restaurants && cart.find(restaurant => restaurant.order.length)) ?

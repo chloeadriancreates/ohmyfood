@@ -46,14 +46,14 @@
                 text-decoration: none;
                 padding: 5px 10px;
                 border-radius: 10px;
-                background-color: variables.$primary--bright;
+                background-color: variables.$primary;
                 box-shadow: 0 35px 50px -10px variables.$secondary inset, 0px 10px 10px -5px rgba(0,0,0,0.20);
                 font-size: 1.5rem;
                 font-weight: 500;
                 
     
                 &:hover, &:focus {
-                    background-color: color.scale(variables.$primary--bright, $lightness: 20%);
+                    background-color: color.scale(variables.$primary, $lightness: 20%);
                     box-shadow: 0 35px 50px -10px color.scale(variables.$secondary, $lightness: 20%) inset, 0px 10px 10px -5px rgba(0,0,0,0.30);
                     cursor: pointer;
                 }

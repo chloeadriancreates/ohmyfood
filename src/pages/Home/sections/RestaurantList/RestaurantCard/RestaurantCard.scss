@@ -77,7 +77,7 @@
     }
 
     &:hover &_caption, &:focus &_caption {
-        background-color: color.scale(variables.$primary--bright, $lightness: 85%)
+        background-color: color.scale(variables.$primary, $lightness: 85%)
     }
 
     &:hover &_photo, &:focus &_photo {

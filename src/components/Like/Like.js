@@ -6,7 +6,7 @@ export default function Like({restaurant}) {
     const dispatch = useDispatch();
 
     return (
-        <button className="like" onClick={() => dispatch(toggleLike(restaurant))}>
+        <button className="like" onClick={() => dispatch(toggleLike(restaurant))} aria-label="Like" lang="en">
             { restaurant.liked ?
                 <svg className="like_heart like_heart--full" width="22" height="22" viewBox="0 0 22 22">
                     <defs>
