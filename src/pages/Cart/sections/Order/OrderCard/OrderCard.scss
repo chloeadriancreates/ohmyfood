@@ -20,12 +20,12 @@
 
         &_title {
             margin-bottom: 5px;
-            font-size: 1.2rem;
+            font-size: variables.$copy-medium;
             font-weight: 700;
         }
 
         &_description {
-            font-size: 1rem;
+            font-size: variables.$copy-small;
             font-weight: 300;
         }
     }
@@ -48,7 +48,7 @@
                 border-radius: 10px;
                 background-color: variables.$primary;
                 box-shadow: 0 35px 50px -10px variables.$secondary inset, 0px 10px 10px -5px rgba(0,0,0,0.20);
-                font-size: 1.5rem;
+                font-size: variables.$copy-large;
                 font-weight: 500;
                 
     
@@ -60,14 +60,14 @@
             }
     
             &_text {
-                font-size: 1.5rem;
+                font-size: variables.$copy-large;
                 font-weight: 500;
                 margin: 0 1rem;
             }
         }
     
         &_price {
-            font-size: 1.5rem;
+            font-size: variables.$copy-large;
             font-weight: 500;
         }
     }

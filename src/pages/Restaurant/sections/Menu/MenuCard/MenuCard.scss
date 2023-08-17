@@ -27,12 +27,12 @@
 
         &_title {
             margin-bottom: 5px;
-            font-size: 1.2rem;
+            font-size: variables.$copy-medium;
             font-weight: 700;
         }
 
         &_description {
-            font-size: 1rem;
+            font-size: variables.$copy-small;
             font-weight: 300;
         }
     }
@@ -71,7 +71,7 @@
         }
 
         &_price {
-            font-size: 1rem;
+            font-size: variables.$copy-small;
             font-weight: 700;
             padding-bottom: 0.4rem;
 

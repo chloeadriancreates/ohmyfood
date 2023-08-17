@@ -30,12 +30,12 @@
 
         &_description {
             font-weight: 300;
-            font-size: 1.2rem;
+            font-size: variables.$copy-medium;
             text-align: center;
             margin: 0 1rem 1rem;
 
             @include mixins.mobileAndUp {
-                font-size: 1.5rem;
+                font-size: variables.$copy-large;
                 margin: 0 3rem 2rem;
             }
         }

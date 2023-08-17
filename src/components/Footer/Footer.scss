@@ -20,7 +20,7 @@
 
         @include mixins.laptopAndUp {
             margin: 0;
-            font-size: 1.6rem;
+            font-size: variables.$display-small;
         }
     }
 

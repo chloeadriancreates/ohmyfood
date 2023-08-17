@@ -6,7 +6,7 @@
     @include mixins.verticalDropShadow(0.15);
     background: variables.$grey--light;
     width: 100%;
-    font-size: 1rem;
+    font-size: variables.$copy-small;
     font-weight: 500;
     border-radius: 20px;
     margin: 0px 2% 1.6rem 0.8rem;

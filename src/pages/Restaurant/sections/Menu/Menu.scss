@@ -21,7 +21,7 @@
         
         &_heading {
             @include mixins.flex(column, flex-start, flex-start);
-            font-size: 1rem;
+            font-size: variables.$copy-small;
             font-weight: 300;
             text-transform: uppercase;
             margin-left: 0.5rem;

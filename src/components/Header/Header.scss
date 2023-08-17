@@ -11,10 +11,10 @@
 
         &_text {
             font-family: variables.$display;
-            font-size: 1.5rem;
+            font-size: variables.$display-small;
 
             @include mixins.mobileAndUp {
-                font-size: 2.5rem;
+                font-size: variables.$display-xlarge;
             }
         }
 
@@ -26,7 +26,7 @@
     &_arrow {
         @include mixins.resetLink;
         @include mixins.transition;
-        font-size: 1.8rem;
+        font-size: 1.75rem;
         border: none;
         background: none;
 
@@ -47,11 +47,11 @@
         min-width: 5rem;
 
         &_icon {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
         }
 
         &_text {
-            font-size: 1rem;
+            font-size: variables.$copy-small;
             font-weight: 300;
             margin-top: 0.4rem;
         }
