@@ -25,6 +25,10 @@ const router = createBrowserRouter([
     path: "/restaurant/:id",
     element: <Restaurant />,
     errorElement: <Error />
+  },
+  {
+    path: "/error",
+    element: <Error />
   }
 ]);
 
