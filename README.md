@@ -1,7 +1,8 @@
 ![Banner](READMEbanner.jpg)
 
 ## Presentation
-Ohmyfood is a fictional service that allows customers to order the dishes they want to eat at a restaurant ahead of time. This was originally project 3 of my OpenClassrooms front-end development program, made with HTML and Sass – I decided to give it a fresh coat of paint with my new skills and remake it using React and Redux ! This version has functional likes (you will see an additional section of your favorite restaurants once you start liking) and a functional cart.
+*This is a fictional project, which started as project 3 of my OpenClassrooms front-end development program, made with HTML and Sass. I decided to remake it with React, Redux and Sass, using my new skills. You can visit this new version [here](https://ohmyfood.chloeadrian.dev/)!* \
+Ohmyfood is a platform that lets clients choose and order meals they will eat at a restaurant in advance. Each restaurant has a menu page, with their dishes sorted in categories. The user can like their favorite restaurants, as well as add dishes to their cart and see their order total by restaurant.
 
 ## Prerequisites
 - [NodeJS (version 16.17.0)](https://nodejs.org/en/)
